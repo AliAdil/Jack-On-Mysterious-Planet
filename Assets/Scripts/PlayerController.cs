@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
+    // initial jump force
     public float jumpForce = 25f;
+    
+    // jack running speed
     public float runningSpeed = 1.5f;
+    
+    //for storing layer of platfrom  for the detection of raycasting
     public LayerMask groundLayer;
+    
+    // for getiting rigid body component 
     private Rigidbody2D rigidBody;
+    
+    // for gaining access of animator through by adding player stripes in animator variable
     public Animator animator;
 
     
@@ -29,6 +37,14 @@ public class PlayerController : MonoBehaviour {
         }
         animator.SetBool("isGrounded", IsGrounded());
 	}
+
+    void FixedUpdate()
+    {
+        if (rigidBody.velocity.x < runningSpeed)
+        {
+            rigidBody.velocity = new Vector2(runningSpeed, rigidBody.velocity.y);
+        }
+    }
 
 
     void Jump()
