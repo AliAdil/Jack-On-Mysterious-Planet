@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 407460}
   - component: {fileID: 21255758}
   - component: {fileID: 6156106}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Floor (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 453088}
   - component: {fileID: 21274622}
   - component: {fileID: 6181272}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Floor (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 419720}
   - component: {fileID: 21232894}
   - component: {fileID: 6182188}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Floor (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 477330}
   - component: {fileID: 21272272}
   - component: {fileID: 6143074}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Floor (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 452454}
   - component: {fileID: 21230290}
   - component: {fileID: 6146624}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Floor (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FloorShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.37, y: -4.4, z: 0}
+  m_LocalPosition: {x: -2.56, y: -2.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453088}

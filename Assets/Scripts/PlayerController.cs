@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float jumpForce = 25f;
-    public Rigidbody2D rigidBody;
+    private Rigidbody2D rigidBody;
+    public Animator animator;
+    
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
     }
 	// Use this for initialization
 	void Start () {
-		
+        animator.SetBool("isAlive", true);
 	}
 	
 	// Update is called once per frame
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour {
         {
             Jump();
         }
+        animator.SetBool("isGrounded", IsGrounded());
 	}
     void Jump()
     {
