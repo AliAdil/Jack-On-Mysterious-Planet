@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float jumpForce = 25f;
+    public float runningSpeed = 1.5f;
+    public LayerMask groundLayer;
     private Rigidbody2D rigidBody;
     public Animator animator;
+
     
     void Awake()
     {
@@ -26,6 +29,8 @@ public class PlayerController : MonoBehaviour {
         }
         animator.SetBool("isGrounded", IsGrounded());
 	}
+
+
     void Jump()
     {
         if (IsGrounded())
@@ -33,7 +38,8 @@ public class PlayerController : MonoBehaviour {
             rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
-    public LayerMask groundLayer;
+    
+
     bool IsGrounded()
     {
         if (Physics2D.Raycast(this.transform.position, Vector2.down, 0.2f, groundLayer.value))
