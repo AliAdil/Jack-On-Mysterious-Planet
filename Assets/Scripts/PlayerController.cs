@@ -40,14 +40,13 @@ public class PlayerController : MonoBehaviour {
     
     void FixedUpdate()
     {
-        //if (rigidBody.velocity.x < runningSpeed)
-        //{
-           // Debug.Log("rigid body velocity x "+rigidBody.velocity.x);
+       if (rigidBody.velocity.x < runningSpeed)
+        {
             //Vector is a simple C# constructor, and we are	passing	the	x and y values in brackets. Our
             //character is moving from left	to right, so we are	applying force with x equal	to the running speed and leaving velocity y unchanged.
-            rigidBody.velocity = new Vector2(-runningSpeed,rigidBody.velocity.y);
-            Debug.Log(rigidBody.velocity +" rigidbody velocity x  "+rigidBody.velocity.x + " rg v y " + rigidBody.velocity.y + "running speed" + runningSpeed);
-        //}
+            rigidBody.velocity = new Vector2(runningSpeed,rigidBody.velocity.y);
+          
+        }
     }
 
 
