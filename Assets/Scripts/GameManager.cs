@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        PlayerController.instance.StartGame();
         currentGameState = GameState.menu;
 
        
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     //called to start the game
     public void StartGame()
     {
-      
+       
         SetGameState(GameState.inGame);
         
     }

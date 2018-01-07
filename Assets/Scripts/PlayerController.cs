@@ -5,31 +5,36 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public static PlayerController instance;
+    
     // initial jump force
-    public float jumpForce = 25f;
+    public float jumpForce = 6f;
     
     // jack running speed
-    public float runningSpeed = 0.5f;
+    public float runningSpeed = 1.5f;
     
     //for storing layer of platfrom  for the detection of raycasting
     public LayerMask groundLayer;
     
-    // for getiting rigid body component 
-    private Rigidbody2D rigidBody;
-    
     // for gaining access of animator through by adding player stripes in animator variable
     public Animator animator;
 
+    // for getiting rigid body component 
+    private Rigidbody2D rigidBody;
+    private Vector3 startingPosition;
     
     void Awake()
     {
         // PlayerController class instance for singleton approch 
         instance = this;
         rigidBody = GetComponent<Rigidbody2D>();
+
+        // player starting postion 
+        startingPosition = this.transform.position;
     }
 	// Use this for initialization
-	void Start () {
+	public void StartGame() {
         animator.SetBool("isAlive", true);
+        this.transform.position = startingPosition;
 	}
 	
 	// Update is called once per frame
