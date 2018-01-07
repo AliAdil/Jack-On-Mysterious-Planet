@@ -12,6 +12,14 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     public GameState currentGameState = GameState.menu;
+    
+    // for making simple access to the GameManager instance from anywhere in our code.
+    public static GameManager instance;
+
+    void Awkae()
+    {
+        instance = this;
+    }
 
     void Start()
     {
