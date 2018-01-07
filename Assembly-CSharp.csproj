@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\KillTrigger.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>F:/Unity Projects/Jack On Mysterious Planet/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>

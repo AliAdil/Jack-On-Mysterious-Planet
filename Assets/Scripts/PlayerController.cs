@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour {
     
     void Awake()
     {
+        // PlayerController class instance for singleton approch 
+        instance = this;
         rigidBody = GetComponent<Rigidbody2D>();
     }
 	// Use this for initialization
@@ -80,5 +82,11 @@ public class PlayerController : MonoBehaviour {
         {
             return false;
         }
+    }
+
+    public void Kill()
+    {
+        GameManager.instance.GameOver();
+        animator.SetBool("isAlive", false);
     }
 }
