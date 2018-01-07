@@ -61,15 +61,16 @@ public class GameManager : MonoBehaviour
         else if (newGameState == GameState.inGame)
         {
             // setup unity scene for inGame state
-            currentGameState = GameState.inGame;
+            
            
 
         }
         else if (newGameState == GameState.gameOver)
         {
             // setup unity scene for gameOver state
-            currentGameState = GameState.gameOver;
+            
         }
+        currentGameState= newGameState;
     }
     void Update()
     {
