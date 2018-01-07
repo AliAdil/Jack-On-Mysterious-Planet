@@ -24,14 +24,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-      currentGameState = GameState.menu;
-       //StartGame();
+        currentGameState = GameState.menu;
+
+       
+      
     }
     //called to start the game
     public void StartGame()
     {
       
         SetGameState(GameState.inGame);
+        
     }
 
  
@@ -57,6 +60,7 @@ public class GameManager : MonoBehaviour
         else if (newGameState == GameState.inGame)
         {
             // setup unity scene for inGame state
+            currentGameState = GameState.inGame;
            
 
         }
@@ -69,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetButtonDown("s"))
         {
+           // currentGameState = GameState.inGame;
             StartGame();
         }
     }
