@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     // for getiting rigid body component 
     private Rigidbody2D rigidBody;
+    //created variable for player starting postion of type vector3
     private Vector3 startingPosition;
     
     void Awake()
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour {
         instance = this;
         rigidBody = GetComponent<Rigidbody2D>();
 
-        // player starting postion 
+        // stored player starting postion is startingPosition variable  
         startingPosition = this.transform.position;
     }
 	// Use this for initialization
