@@ -29,23 +29,30 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
         // this is exaclty same as if(Input.GetMouseButtonDown(0)	==	true)
-        if (Input.GetMouseButtonDown(0))
+        if (GameManager.instance.currentGameState == GameState.inGame)
         {
-            Jump();
+            if (Input.GetMouseButtonDown(0))
+            {
+                Jump();
+            }
+            animator.SetBool("isGrounded", IsGrounded());
         }
-        animator.SetBool("isGrounded", IsGrounded());
-	}
-    
+    }
+
     void FixedUpdate()
     {
-       if (rigidBody.velocity.x < runningSpeed)
+        if (GameManager.instance.currentGameState == GameState.inGame)
         {
-            //Vector is a simple C# constructor, and we are	passing	the	x and y values in brackets. Our
-            //character is moving from left	to right, so we are	applying force with x equal	to the running speed and leaving velocity y unchanged.
-            rigidBody.velocity = new Vector2(runningSpeed,rigidBody.velocity.y);
-          
+            if (rigidBody.velocity.x < runningSpeed)
+            {
+                //Vector is a simple C# constructor, and we are	passing	the	x and y values in brackets. Our
+                //character is moving from left	to right, so we are	applying force with x equal	to the running speed and leaving velocity y unchanged.
+                rigidBody.velocity = new Vector2(runningSpeed, rigidBody.velocity.y);
+
+            }
         }
     }
 
