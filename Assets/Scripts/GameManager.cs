@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
         else if (newGameState == GameState.gameOver)
         {
             // setup unity scene for gameOver state
+            currentGameState = GameState.gameOver;
         }
     }
     void Update()
@@ -77,6 +78,8 @@ public class GameManager : MonoBehaviour
             StartGame();
         }
     }
+
+    
 }
 
 
