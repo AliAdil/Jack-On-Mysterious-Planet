@@ -11,25 +11,30 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    public GameState currentGameState = GameState.menu;
+    
     
     // for making simple access to the GameManager instance from anywhere in our code.
     public static GameManager instance;
+    public GameState currentGameState = GameState.menu;
 
-    void Awkae()
+    void Awake()
     {
         instance = this;
     }
 
     void Start()
     {
-        StartGame();
+      currentGameState = GameState.menu;
+       //StartGame();
     }
     //called to start the game
     public void StartGame()
     {
+      
         SetGameState(GameState.inGame);
     }
+
+ 
 
     //called when player die
     public void GameOver()
@@ -52,11 +57,21 @@ public class GameManager : MonoBehaviour
         else if (newGameState == GameState.inGame)
         {
             // setup unity scene for inGame state
+           
+
         }
         else if (newGameState == GameState.gameOver)
         {
             // setup unity scene for gameOver state
         }
     }
+    void Update()
+    {
+        if (Input.GetButtonDown("s"))
+        {
+            StartGame();
+        }
+    }
 }
+
 

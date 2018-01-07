@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+
+    public static PlayerController instance;
     // initial jump force
     public float jumpForce = 25f;
     
@@ -31,21 +33,21 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        // this is exaclty same as if(Input.GetMouseButtonDown(0)	==	true)
-        if (GameManager.instance.currentGameState == GameState.inGame)
-        {
+        //  this is exaclty same as if(Input.GetMouseButtonDown(0)	==	true)
+       //if (GameManager.instance.currentGameState == GameState.inGame)
+        //{
             if (Input.GetMouseButtonDown(0))
             {
                 Jump();
             }
             animator.SetBool("isGrounded", IsGrounded());
-        }
+        //}
     }
 
     void FixedUpdate()
     {
-        if (GameManager.instance.currentGameState == GameState.inGame)
-        {
+       // if (GameManager.instance.currentGameState == GameState.inGame)
+        //{
             if (rigidBody.velocity.x < runningSpeed)
             {
                 //Vector is a simple C# constructor, and we are	passing	the	x and y values in brackets. Our
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour {
                 rigidBody.velocity = new Vector2(runningSpeed, rigidBody.velocity.y);
 
             }
-        }
+        //}
     }
 
 
