@@ -37,7 +37,7 @@ public class LevelGenerator : MonoBehaviour {
         }
         else
         {
-            //raje exit point from lasr piece as a spawn point new piece 
+            //take exit point from last piece as a spawn point new piece 
             spawnPostion = pieces[pieces.Count - 1].exitPoint.position;
         }
 
