@@ -17,4 +17,31 @@ public class LevelGenerator : MonoBehaviour {
     {
         instance = this;
     }
+
+    public void AddPiece()
+    {
+        //pick the random number
+        int randomIndex = Random.Range(0, levelPrefabs.Count);
+
+        //Instantiate copy of random level prefab and store it in piece variable
+        LevelPiece piece = (LevelPiece)Instantiate(levelPrefabs[randomIndex]);
+        piece.transform.SetParent(this.transform, false);
+
+        Vector3 spawnPostion = Vector3.zero;
+
+        //position
+        if (pieces.Count == 0)
+        {
+            //first piece
+            spawnPostion = levelStartPoint.position;
+        }
+        else
+        {
+            //raje exit point from lasr piece as a spawn point new piece 
+            spawnPostion = pieces[pieces.Count - 1].exitPoint.position;
+        }
+
+        piece.transform.position = spawnPostion;
+        pieces.Add(piece);
+    }
 }
