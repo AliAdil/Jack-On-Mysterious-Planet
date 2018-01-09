@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     // for making simple access to the GameManager instance from anywhere in our code.
     public static GameManager instance;
     public GameState currentGameState = GameState.menu;
+    public Canvas menuCanvas;
 
     void Awake()
     {
@@ -57,18 +58,19 @@ public class GameManager : MonoBehaviour
         if (newGameState == GameState.menu)
         {
             //setup Unity scene for menu state
+            menuCanvas.enabled = true;
         }
         else if (newGameState == GameState.inGame)
         {
             // setup unity scene for inGame state
-            
+            menuCanvas.enabled = false;
            
 
         }
         else if (newGameState == GameState.gameOver)
         {
             // setup unity scene for gameOver state
-            
+            menuCanvas.enabled = false;
         }
         currentGameState= newGameState;
     }
