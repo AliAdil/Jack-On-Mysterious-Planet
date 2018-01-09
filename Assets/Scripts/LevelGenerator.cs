@@ -28,7 +28,8 @@ public class LevelGenerator : MonoBehaviour {
         {
             AddPiece();
         }
-    }
+    }
+
 
 
     public void AddPiece()
