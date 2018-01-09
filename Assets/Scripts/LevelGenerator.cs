@@ -18,10 +18,23 @@ public class LevelGenerator : MonoBehaviour {
         instance = this;
     }
 
+    void Start()
+    {
+        GenerateInitialPieces();
+    }
+    public void GenerateInitialPieces()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            AddPiece();
+        }
+    }
+
+
     public void AddPiece()
     {
         //pick the random number
-        int randomIndex = Random.Range(0, levelPrefabs.Count);
+        int randomIndex = Random.Range(0, levelPrefabs.Count-1);
 
         //Instantiate copy of random level prefab and store it in piece variable
         LevelPiece piece = (LevelPiece)Instantiate(levelPrefabs[randomIndex]);
@@ -38,10 +51,17 @@ public class LevelGenerator : MonoBehaviour {
         else
         {
             //take exit point from last piece as a spawn point new piece 
-            spawnPostion = pieces[pieces.Count - 1].exitPoint.position;
+            spawnPostion = pieces[pieces.Count-1].exitPoint.position;
         }
 
         piece.transform.position = spawnPostion;
         pieces.Add(piece);
+    }
+    public void RemoveOldestPiece()
+    {
+        LevelPiece oldestPiece = pieces[0];
+
+        pieces.Remove(oldestPiece);
+        Destroy(oldestPiece.gameObject);
     }
 }
