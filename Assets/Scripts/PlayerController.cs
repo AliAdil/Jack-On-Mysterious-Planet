@@ -94,5 +94,18 @@ public class PlayerController : MonoBehaviour {
     {
         GameManager.instance.GameOver();
         animator.SetBool("isAlive", false);
+
+        //check if highscore save if it is 
+        if(PlayerPrefs.GetFloat("highscore",0)<this.GetDistance()){
+            //save new highscore
+            PlayerPrefs.SetFloat("highsore", this.GetDistance());
+
+        }
+    }
+
+    public float GetDistance()
+    {
+        float traveledDistance = Vector2.Distance(new Vector2(startingPosition.x,0),new Vector2(this.transform.position.x,0));
+        return traveledDistance;
     }
 }
